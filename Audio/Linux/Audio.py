@@ -10,7 +10,12 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 import time
+from os import path
+import os
+from pydub import AudioSegment
+import glob
 import pandas as pd 
+import shutil
 # Read the .csv file
 data = pd.read_csv('AudioData.csv')
 data = data.values
@@ -110,5 +115,14 @@ for region in range(0,len(data)):
     PageInitialization(NSD_TYPE,NSD_Region,NSD_Language,NSD_Bulletin)
     LoopForPages(NSD_Region,NSD_Bulletin)
     driver.close()
-#time.sleep(15)
+time.sleep(10)
 #driver.close()
+'''--------- COnvert to .wav--------------'''
+filenames = glob.glob('/home/luvitusmaximus/Documents/ASR/'+'*')
+for src in filenames:
+    sound = AudioSegment.from_mp3(src)
+    sound = sound.set_channels(1)
+    var = src.split('.')
+    dst = var[0]
+    sound.export(dst, format="wav",bitrate='16k') # mp3 file --> sin(1khz) + sin(20khz)
+    os.remove(src)
