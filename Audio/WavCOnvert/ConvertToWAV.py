@@ -19,10 +19,14 @@ for file in filenames:
     name = substring_after(file,delimiter)
     mp3names.append(name)
     name = substring_before(name,'.mp3')
+    n = name.split(' ')
+    name = n[0]+'_'+ n[1] + '_' + n[2]
+    print(name)
     newNames.append(name)
 print(newNames)
 ''' Running the SOX command for all files. '''
 i = 0
 for file in filenames:
-    subprocess.run(["sox",file,'-r 32000',(directory+newNames[i]+'.wav')])
+    print('Converting File :',file,'\n')
+    subprocess.run(["sox",file,'-c 1','-r 32000',(directory+newNames[i]+'.wav')])
     i = i + 1
