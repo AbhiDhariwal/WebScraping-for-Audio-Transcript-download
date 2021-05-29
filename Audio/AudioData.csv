@@ -1,0 +1,14 @@
+index,NSD_TYPE,NSD_Region,NSD_Language,NSD_Bulletin,unk
+1,Regional,Dehradun,Hindi,"1830",24
+2,Regional,Dehradun,Hindi,"1830",24
+3,Regional,Itanagar,Hindi,"1645",24
+4,Regional,Itanagar,English,"1655",24
+5,Regional,Itanagar,Hindi,"1945",24
+6,Regional,Itanagar,English,"1950",24
+7,Regional,Jaipur,Hindi,"0900",24
+8,Regional,Jaipur,Hindi,"1230",24
+9,Regional,Jaipur,Hindi,"1830",24
+10,Regional,Lucknow,Hindi,"1920",24
+11,Regional,Patna,Hindi,"0830",24
+12,Regional,Patna,Hindi,"1930",24
+13,Regional,Chandigarh,Hindi,"1810",24
